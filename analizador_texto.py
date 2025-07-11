@@ -16,7 +16,7 @@ cantidad_letras3 = texto.count(letras[2])
 print(f"Hemos encontrado la letra {letras[0]} repetida {cantidad_letras1} veces")
 print(f"Hemos encontrado la letra {letras[1]} repetida {cantidad_letras2} veces")
 print(f"Hemos encontrado la letra {letras[2]} repetida {cantidad_letras3} veces")
-
+ 
 print("\n")
 print("Cantidad de palabras: ")
 palabras = texto.split()
