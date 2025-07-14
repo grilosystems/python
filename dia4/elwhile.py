@@ -29,3 +29,16 @@ for cuadrado in range(1,16):
     suma_cuadrados += (cuadrado*cuadrado)
     
 print(suma_cuadrados)
+
+lista_nombres = ["Marcos", "Laura", "Mónica", "Javier", "Celina", "Marta", "Darío", "Emiliano", "Melisa"]
+
+for indice, nombre in enumerate(lista_nombres):
+    print(f'{nombre} se encuentra en el índice {indice}')
+    
+lista_indices = list(enumerate("Python"))
+print(lista_indices)
+
+lista_nombres = ["Marcos", "Laura", "Mónica", "Javier", "Celina", "Marta", "Darío", "Emiliano", "Melisa"]
+for indice, nombre in enumerate(lista_nombres):
+    if nombre.startswith('M'):
+        print(indice)
