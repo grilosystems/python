@@ -39,11 +39,11 @@ def enmascarar_palabra(palabra, letras_reveladas=None):
     
     resultado = []
     for letra in palabra:
-        if letra.lower() in letras_reveladas or letra.upper() in letras_reveladas:
+        if letra.lower() in letras_reveladas:
             resultado.append(letra)
         else:
             resultado.append('_')
-    return ' '.join(resultado)
+    return ''.join(resultado)
 
 '''
     pedir letra al usuario, 
@@ -66,21 +66,27 @@ def play_game(config_inicio):
     guiones = config_inicio['guiones']
     estado = config_inicio['estado']
     letras_encontradas = []
+    resultado = ''
     
     print("Este es el juego del ahorcado version estados de Mexico")
     print(f"{estado} Adivina el estado de Mexico que pense tienes {vidas} vidas: ")
     print(f"{guiones}")
     while vidas > 0:
         
+        if str(resultado) == str(estado):
+            print(f"GANASTE ENCONTRASTE LA PALABRA: {estado.upper()}")
+            return 0
+        
         letra = obtener_una_letra("Adivina la letra: ")
         
         if letra in letras_encontradas:
             print(f"La letra {letra} ya ha sido encontrada")
             continue
-        
-        letras_encontradas = enmascarar_palabra(letra, estado)
+
         if letra in estado:
-            print(letras_encontradas)
+            letras_encontradas.append(letra)
+            resultado = enmascarar_palabra(estado, letras_encontradas)
+            print(resultado)
         else:
             lista_errores.append(letra)
             print(lista_errores)
