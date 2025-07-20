@@ -26,7 +26,8 @@ def inicio_ahorcado():
 def obtener_una_letra(mensaje="Ingresa una letra: "):
     while True:
         entrada = input(mensaje).strip()
-        if not(len(entrada) == 1 or entrada.isspace()):
+        if len(entrada) != 1:
+            if entrada.isspace(): continue
             print("Debe ser exactamente un carácter.")
         elif not (entrada.isalpha() or entrada.isspace()):
             print("Solo se permiten letras (a-z) minus o espacio.")
