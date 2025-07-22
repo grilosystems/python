@@ -27,7 +27,8 @@ def obtener_una_letra(mensaje="Ingresa una letra: "):
     while True:
         entrada = input(mensaje).strip()
         if len(entrada) != 1:
-            if entrada.isspace(): continue
+            if entrada.isspace(): 
+                continue
             print("Debe ser exactamente un carácter.")
         elif not (entrada.isalpha() or entrada.isspace()):
             print("Solo se permiten letras (a-z) minus o espacio.")
@@ -46,21 +47,6 @@ def enmascarar_palabra(palabra, letras_reveladas=None):
             resultado.append('_')
     return ''.join(resultado)
 
-'''
-    pedir letra al usuario, 
-    validar letra
-    buscar letra en la palabra secreta
-    
-    si la letra no se encuentra en la palabra secreta agregar a la lista de incorrectas
-        mostrar lista de la letras incorrectas
-        descontar una vida
-        mostrar vidas restantes
-        si ya no tiene vidas gameover
-        
-    si la letra se encuentra en la palabra secreta 
-        mostrar guines por letras correctas
-        se completo la palabra? jugador gana
-'''
 def play_game(config_inicio):
     lista_errores = []
     vidas = config_inicio['vidas']
