@@ -235,9 +235,11 @@ def opcion_seleccionada(opcion):
 def main():
     '''Función principal que inicia el programa.'''
     clear_screen()
+    print("#" * 100)
     print("Bienvenido al Recetario de cocina")
     print(f"Total de recetas: {contar_recetas()}")
-    #while True:
+    print("#" * 100)
+    print("\n")
     menu_choice = menu()
     opcion_seleccionada(menu_choice)
 
