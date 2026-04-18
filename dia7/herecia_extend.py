@@ -20,9 +20,12 @@ class Pajaro(Animal):
         print(f"El pajaro vuela {metros} metros")
 
 piolin = Pajaro(3, 'amarillo', 10)
+mi_animal = Animal(5, 'marron')
 
 piolin.nacer()
 
 piolin.hablar()
 
 piolin.volar(100)
+
+print(mi_animal.nacer())
